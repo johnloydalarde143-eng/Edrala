@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login + Register + CRUD App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container" id="loginContainer">
+        <h2>Login System</h2>
+        <input type="text" id="loginUsername" placeholder="Username">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <span onclick="showRegister()" class="link">Register</span></p>
+        <p id="loginMessage"></p>
+    </div>
+
+    <div class="container hidden" id="registerContainer">
+        <h2>Register</h2>
+        <input type="text" id="registerUsername" placeholder="Username">
+        <input type="password" id="registerPassword" placeholder="Password">
+        <select id="registerRole">
+            <option value="user">User</option>
+        </select>
+        <button onclick="register()">Register</button>
+        <p>Already have an account? <span onclick="showLogin()" class="link">Login</span></p>
+        <p id="registerMessage"></p>
+    </div>
+
+    <!-- MAIN APP -->
+    <div class="container hidden" id="appContainer">
+        <h2>Dashboard</h2>
+        <p id="welcomeText"></p>
+        <button onclick="logout()" class="logout">Logout</button>
+
+        <hr>
+
+        <h3>Items</h3>
+        <input type="text" id="itemInput" placeholder="Enter item">
+        <button onclick="addItem()">Add</button>
+        <ul id="itemList"></ul>
+
+        <div id="adminPanel" class="hidden">
+            <hr>
+            <h3>Admin Panel - Manage Users</h3>
+            <ul id="userList"></ul>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
